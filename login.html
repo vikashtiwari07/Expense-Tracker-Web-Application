@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card login-card">
+            <div class="row g-0">
+                <div class="col-md-5 d-none d-md-block login-left">
+                    <div class="card-body text-center">
+                        <h1 class="display-1 mb-4">💰</h1>
+                        <h2 class="card-title mb-3">EXPENSE TRACKER</h2>
+                        <p class="card-text">Track your finances with ease</p>
+                        <hr>
+                        <ul class="text-start features-list">
+                            <li>Secure Authentication</li>
+                            <li>Expense Management</li>
+                            <li>Detailed Reports</li>
+                            <li>Data Visualization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Welcome Back!</h2>
+                        <form method="POST" action="{{ url_for('login') }}">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control form-control-lg" id="username" name="username" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control form-control-lg" id="password" name="password" required>
+                            </div>
+                            <div class="d-grid mb-3">
+                                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                            </div>
+                            <div class="text-center">
+                                <p class="mb-0">Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
